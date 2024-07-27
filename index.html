@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Artículos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gestión de Artículos</h1>
+    <div id="article-form">
+        <h2>Agregar/Editar Artículo</h2>
+        <form id="form">
+            <input type="hidden" id="article-id">
+            <label for="name">Nombre del Artículo:</label>
+            <input type="text" id="name" required>
+            <div id="pieces-container">
+                <!-- Campos de piezas se cargarán aquí en 3 columnas -->
+            </div>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+    <div id="article-list">
+        <h2>Lista de Artículos</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Articulo</th>
+                        ${Array.from({ length: 40 }, (_, i) => `<th>Elemento ${i + 1}</th>`).join('')}
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="articles">
+                    <!-- Artículos se cargarán aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
